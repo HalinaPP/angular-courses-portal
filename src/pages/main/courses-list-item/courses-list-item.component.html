@@ -1,0 +1,30 @@
+<div *ngIf="item">
+  <div
+    class="course-list-item"
+    [ngClass]="{'top-rated': item.isTopRated } "
+    [itemTimeStatus]=" item.date"
+  >
+    <h3>
+      {{ item.name }}
+      <span *ngIf="item.isTopRated">
+        <mat-icon aria-hidden="false" aria-label="Rated"><i class="fa fa-star"></i>{{ "star" | translate }}</mat-icon>
+      </span>
+    </h3>
+    <div class="course-list-item__time">
+      <span>{{ item.length | duration }} </span>
+      <span>{{ item.date | date: "d MMM, yyyy" }}</span>
+    </div>
+    <div class="course-list-item__desc-block">
+      {{ item.description }}
+      <div class="course-list-item__btns">
+        <button
+          class="course-list-item__btn"
+          routerLink="/courses/{{ item.id }}"
+        >
+          {{'edit' | translate}}
+        </button>
+        <button (click)="deleteItem(item.id)">{{'delete' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>

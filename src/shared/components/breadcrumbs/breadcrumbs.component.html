@@ -1,0 +1,7 @@
+<div class="breadcrumbs">
+  <span>{{ "courses" | translate }}</span>
+  <span *ngIf="currCourse"
+    ><span class="breadcrumbs-divider"> / </span>
+    <span>{{ currCourse.title }}</span>
+  </span>
+</div>

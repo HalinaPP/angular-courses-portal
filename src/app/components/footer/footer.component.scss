@@ -1,0 +1,18 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  background: #303240;
+  height: 60px;
+  width: 100%;
+  text-align: right;
+  padding: 16px 84px 20px 0;
+
+  .copyright-videocou {
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #ffffff;
+    font-size: 12px;
+    font-family: "SourceSansPro-Regular";
+    text-transform: none;
+  }
+}

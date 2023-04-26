@@ -1,0 +1,7 @@
+<header>
+  <app-logo></app-logo>
+  <app-select-lang></app-select-lang>
+  <ng-container *ifAuthenticated="authService.isAuthenticated()"
+    ><app-auth-info></app-auth-info
+  ></ng-container>
+</header>

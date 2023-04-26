@@ -1,0 +1,35 @@
+<form class="form">
+  <label>
+    <h3>
+      <span>{{ "authors" | translate }}:</span
+      ><span>*{{ "required" | translate }}</span>
+    </h3>
+    <div
+      [ngClass]="!courseAuthors.length ? 'validation-error' : ''"
+      class="authors-block"
+    >
+      <ul class="tags-authors">
+        <li (click)="delete(author)" *ngFor="let author of courseAuthors">
+          {{ author.name }} X
+        </li>
+      </ul>
+      <input
+        type="text"
+        name="authors"
+        placeholder="{{ 'typing' | translate }}"
+        [formControl]="authorsControl"
+        class="input"
+        autocomplete="off"
+      />
+      <div class="authors-list" *ngIf="authorsControl.value">
+        <div (click)="add(item)" *ngFor="let item of authorsList">
+          {{ item.name }}
+        </div>
+      </div>
+    </div>
+
+    <div class="validation-block" *ngIf="!courseAuthors.length">
+      {{ "authorError" | translate }}
+    </div>
+  </label>
+</form>

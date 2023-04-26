@@ -1,0 +1,12 @@
+<div class="search">
+  <form [formGroup]="searchForm" (submit)="searchItem()">
+    <label>
+      <input
+        type="text"
+        data-placeholder="{{ 'type' | translate }}"
+        formControlName="search"
+      />
+    </label>
+    <button>{{ "search" | translate }}</button>
+  </form>
+</div>

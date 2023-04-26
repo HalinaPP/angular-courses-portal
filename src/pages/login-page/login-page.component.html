@@ -1,0 +1,37 @@
+<div class="login-page">
+  <div class="login-page_wrapper">
+    <div class="login-page_header">{{ "login" | translate }}</div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="login-page_field">
+        <label
+          ><span>{{ "email" | translate }}:</span
+          ><span>*{{ "required" | translate }}</span></label
+        >
+        <input
+          type="email"
+          formControlName="email"
+          required
+          placeholder="{{ 'enterEmail' | translate }}"
+        />
+      </div>
+      <div class="login-page_field">
+        <label
+          ><span>{{ "password" | translate }}:</span>
+          <span>*{{ "required" | translate }}</span></label
+        >
+        <input
+          type="password"
+          formControlName="password"
+          required
+          placeholder="{{ 'enterPassword' | translate }}"
+        />
+      </div>
+      <div class="login-page_link-button">
+        <a href="#">{{ "forget" | translate }}</a>
+        <button type="submit" class="green-button">
+          {{ "login" | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

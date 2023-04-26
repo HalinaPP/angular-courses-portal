@@ -1,0 +1,14 @@
+<main>
+  <div *ifAuthenticated="true">
+    <app-breadcrumbs></app-breadcrumbs>
+    <div class="courses-block">
+      <app-search (filterCoursesEvent)="filterItems($event)"></app-search>
+       <app-action-button
+        routerLink="/courses/new"
+        class="add-course-btn"
+        [buttonName]="'add' | translate"
+      ></app-action-button>
+      <app-courses-list [searchValue]="searchValue"></app-courses-list>
+    </div>
+  </div>
+</main>

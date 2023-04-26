@@ -1,0 +1,23 @@
+<div class="date_field">
+  <form>
+    <label
+      ><span>{{ "date" | translate }}:</span
+      ><span>*{{ "required" | translate }}</span></label
+    >
+    <div
+      *ngIf="dateControl.errors && dateControl.touched"
+      class="alert alert-danger"
+    >
+      {{ "dateError" | translate }}
+    </div>
+    <input
+      type="text"
+      name="creationDate"
+      [ngClass]="dateControl.errors ? 'validation-error' : ''"
+      [formControl]="dateControl"
+      [value]="dateControl.value | date: 'MM/dd/yyyy'"
+      (change)="onChange($event.target.value)"
+      placeholder="MM/DD/YYYY"
+    />
+  </form>
+</div>

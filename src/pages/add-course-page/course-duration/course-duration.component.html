@@ -1,0 +1,22 @@
+<div class="duration_field">
+  <form>
+    <label
+      ><span>{{ "duration" | translate }}:</span
+      ><span>*{{ "required" | translate }}</span></label
+    >
+    <div
+      *ngIf="durationControl.errors && durationControl.touched"
+      class="alert alert-danger"
+    >
+      {{ "durationError" | translate }}
+    </div>
+    <input
+      type="text"
+      name="duration"
+      [ngClass]="durationControl.errors ? 'validation-error' : ''"
+      [formControl]="durationControl"
+      (change)="onChange($event.target.value)"
+    />
+  </form>
+</div>
+<div>{{ durationControl.value | duration }}</div>

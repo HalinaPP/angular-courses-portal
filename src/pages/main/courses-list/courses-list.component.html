@@ -1,0 +1,15 @@
+<section>
+  <div *ngIf="items; then videoExists; else videoEmpty"></div>
+  <ng-template #videoExists>
+    <app-courses-list-item
+      *ngFor="let item of items | orderBy"
+      [item]="item"
+      (delete)="deleteCourse($event)"
+    ></app-courses-list-item>
+
+    <button class="course-list__load-more-btn" (click)="loadMore()">
+      <span>{{ "more" | translate }}</span>
+    </button>
+  </ng-template>
+  <ng-template #videoEmpty>{{ "emptyData" | translate}}</ng-template>
+</section>

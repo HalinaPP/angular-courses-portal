@@ -1,0 +1,37 @@
+.video-course {
+font-size: 18px;
+	font-family: "SourceSansPro-Bold";
+	text-align: left;
+	font-weight: 700;
+	text-transform: uppercase;
+  word-wrap: unset;
+}
+
+.oval {
+  position:absolute;
+  top:0;
+  left:0;
+	box-sizing: border-box;
+	border-color: #979797;
+	border-width: 2px;
+	border-style: solid;
+	height: 28px;
+	width: 28px;
+}
+
+.triangle {
+  position:absolute;
+  top:0;
+  left:0;
+	background-image: linear-gradient(141deg, #0079AD 11%, #B4D084 100%);
+	transform: rotate(-270deg);
+	border-radius: 1px;
+	background-color: #D8D8D8;
+	height: 12px;
+	width: 16px;
+}
+.group {
+  position: relative;
+	height: 28px;
+	width: 28px;
+}

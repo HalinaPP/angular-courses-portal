@@ -1,0 +1,26 @@
+section {
+  display:flex;
+  flex-direction: column;
+  row-gap: 25px;
+  padding-top:17px;
+
+  .course-list__load-more-btn {
+    width: 100%;
+    border-radius: 6px;
+    border: 0;
+    background: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(29, 30, 38, 0.1),
+      0 2px 10px 0 rgba(29, 30, 38, 0.15);
+    height: 36px;
+    cursor: pointer;
+
+    span {
+      line-height: 24px;
+      letter-spacing: 0;
+      color: #5681ee;
+      font-size: 12px;
+      font-family: "SourceSansPro-Regular";
+      text-decoration: underline;
+    }
+  }
+}

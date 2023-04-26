@@ -1,0 +1,33 @@
+@import '../../../styles.scss';
+
+.date_field {
+  padding-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    span:first-child {
+      font-weight: bold;
+    }
+  }
+
+  input{
+    width:150px;
+    border-radius: 3px;
+    padding: 8px 12px;
+    border: 1px solid #ced0db;
+    background-color: #ffffff;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: #acafbf;
+    font-size: 14px;
+    font-family: "SourceSansPro-Regular";
+  }
+}
+.ng-invalid{
+  border-color:red!important;;
+}

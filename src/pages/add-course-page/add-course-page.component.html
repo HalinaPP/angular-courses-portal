@@ -1,0 +1,78 @@
+<app-breadcrumbs [currCourse]="currCourse$ | async"></app-breadcrumbs>
+<div class="add-course">
+  <div class="add-course_wrapper">
+    <h1>{{ "new" | translate }}</h1>
+    <form (submit)="save()" [formGroup]="courseForm">
+      <div class="add-course_field">
+        <label
+          ><span>{{ "input" | translate }}:</span
+          ><span>*{{ "required" | translate }}</span></label
+        >
+        <div
+          *ngIf="nameControl.invalid && nameControl.touched"
+          class="alert alert-danger"
+        >
+          <div *ngIf="nameControl.errors?.required">
+            {{ "nameError" | translate }}
+          </div>
+          <div *ngIf="nameControl.errors?.maxlength">
+            {{ "titleError" | translate }}
+          </div>
+        </div>
+        <input
+          type="text"
+          name="name"
+          [ngClass]="nameControl.errors ? 'validation-error' : ''"
+          [formControl]="nameControl"
+          placeholder="{{ 'text' | translate }}"
+        />
+      </div>
+
+      <div class="add-course_field">
+        <label
+          ><span>{{ "description" | translate }}:</span
+          ><span>*{{ "required" | translate }}</span></label
+        >
+        <div
+          *ngIf="
+            descriptionControl.invalid &&
+            (descriptionControl.dirty || descriptionControl.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="descriptionControl.errors?.required">
+            Description is required.
+          </div>
+          <div *ngIf="descriptionControl.errors?.maxlength">
+            {{ "descriptionError" | translate }}
+          </div>
+        </div>
+        <textarea
+          name="description"
+          [ngClass]="descriptionControl.errors ? 'validation-error' : ''"
+          [formControl]="descriptionControl"
+          placeholder="{{ 'text' | translate }}"
+        >
+        </textarea>
+      </div>
+      <app-course-duration
+        [formControl]="durationControl"
+      ></app-course-duration>
+      <app-course-date [formControl]="dateControl"></app-course-date>
+
+      <app-course-authors [formControl]="authorsControl"></app-course-authors>
+      <div class="add-course_buttons">
+        <button type="submit" class="grey-button" (click)="cancel()">
+          {{ "cancel" | translate }}
+        </button>
+        <button
+          type="submit"
+          class="green-button"
+          [disabled]="courseForm.invalid"
+        >
+          {{ "save" | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

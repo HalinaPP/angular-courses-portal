@@ -1,0 +1,32 @@
+.search {
+  display: flex;
+  flex-direction: row;
+  column-gap: 12px;
+
+  input {
+    height: 36px;
+    width: 240px;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: #acafbf;
+    font-size: 14px;
+    font-family: "SourceSansPro-Regular";
+    border-radius: 3px;
+    border: 1px solid #ced0db;
+    background: #ffffff;
+  }
+
+  &__btn {
+    border-radius: 3px;
+    background: #67a300;
+    height: 36px;
+    width: 73px;
+    line-height: 30px;
+    letter-spacing: -0.08px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "SourceSansPro-Semibold";
+    font-weight: 600;
+    border: 1px solid #67a300;
+  }
+}
